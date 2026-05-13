@@ -171,7 +171,7 @@
     "android": {
         "name": "SwiftPOS NG",
         "showName": "SwiftPOS NG",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "webUrl": "https://app.swiftpos.ng/",
         "id": "com.swifttpos.ng.android",
         "icon": "./scripts/assets/app-icon.png",
