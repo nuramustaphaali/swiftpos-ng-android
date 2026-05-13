@@ -41,6 +41,12 @@ function generateAdaptiveIcons(input, output) {
             `convert "${input}" -resize ${fgSize}x${fgSize} ` +
                 `-gravity center -background none -extent ${size}x${size} ${foregroundFile}`
         )
+
+        // Generate legacy icons for devices that don't support adaptive icons
+        const legacyFile = path.join(dir, 'ic_launcher.png')
+        const roundFile = path.join(dir, 'ic_launcher_round.png')
+        execSync(`convert "${input}" -resize ${size}x${size} ${legacyFile}`)
+        execSync(`convert "${input}" -resize ${size}x${size} ${roundFile}`)
     }
 
     // 生成 Adaptive Icon XML (放到 mipmap-anydpi-v26)
@@ -54,6 +60,7 @@ function generateAdaptiveIcons(input, output) {
 </adaptive-icon>`
 
     fs.writeFileSync(path.join(anydpiDir, 'ic_launcher.xml'), xml, 'utf-8')
+    fs.writeFileSync(path.join(anydpiDir, 'ic_launcher_round.xml'), xml, 'utf-8')
 
     console.log('✅ Adaptive Icons 已生成:', output)
 }
