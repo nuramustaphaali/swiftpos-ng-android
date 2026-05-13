@@ -65,7 +65,7 @@ jobs:
               uses: softprops/action-gh-release@v1
               with:
                   files: app/build/outputs/apk/debug/*.apk
-                  tag_name: '${{ env.NAME }}'
+                  tag_name: 'v${{ env.VERSION }}'
                   name: '${{ env.NAME }} v${{ env.VERSION }}'
                   body: '${{ env.PUBBODY }}'
                   draft: false
