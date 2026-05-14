@@ -950,6 +950,15 @@ class MainActivity : AppCompatActivity() {
             if (showLaunchSplash && request?.isForMainFrame == true) {
                 mainFrameLoadError = true
             }
+            val errorCode = error?.errorCode ?: 0
+            if (request?.isForMainFrame == true && 
+                (errorCode == WebViewClient.ERROR_HOST_LOOKUP || 
+                 errorCode == WebViewClient.ERROR_CONNECT || 
+                 errorCode == WebViewClient.ERROR_TIMEOUT)) {
+                view?.loadUrl("file:///android_asset/offline.html")
+                // Reset mainFrameLoadError so splash screen hides properly after offline page loads
+                if (showLaunchSplash) mainFrameLoadError = false
+            }
         }
 
         override fun onReceivedHttpError(

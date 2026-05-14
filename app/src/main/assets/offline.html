@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>No Internet Connection</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+        }
+        .icon {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            fill: #adb5bd;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 0 0 10px 0;
+            color: #212529;
+        }
+        p {
+            font-size: 16px;
+            color: #6c757d;
+            margin: 0 0 30px 0;
+            line-height: 1.5;
+        }
+        .btn {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(13, 110, 253, 0.2);
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .btn:active {
+            background-color: #0b5ed7;
+            transform: scale(0.96);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.88 4.61L21.46 3.2C15.98 -2.28 7.07 -2.28 1.59 3.2L.18 4.61C1.07 5.51 2.37 5.92 3.61 5.75L12 14.14L19.46 6.69C20.67 6.84 21.96 6.44 22.88 4.61zM12 18C10.9 18 10 18.9 10 20C10 21.1 10.9 22 12 22C13.1 22 14 21.1 14 20C14 18.9 13.1 18 12 18z"/>
+            <path d="M22.61 14.73L21.2 13.32C19.34 11.46 16.63 10.74 14.15 11.16L17.7 14.71C19.11 14.75 20.44 15.34 21.46 16.36L22.87 17.77C23.51 17.13 23.95 16.27 24 15.35C23.96 15.15 23.9 14.95 23.83 14.77C23.51 14.47 23.08 14.36 22.61 14.73zM5.56 16.26L4.15 14.85C6.31 12.69 9.35 11.83 12.26 12.29L8.71 8.74C6.54 9.17 4.54 10.42 3.03 12.07L1.62 10.66C3.65 8.49 6.43 7.04 9.4 6.48L5.75 2.83C4.26 3.73 2.95 5.04 2.05 6.53L1.14 5.62C-.16 6.92 -1.16 8.76 -1.16 10.66C-1.16 12.56 -.16 14.4 1.14 15.7L2.55 17.11C3.45 16.21 4.45 15.65 5.56 16.26z" opacity="0.3"/>
+            <path d="M4.27 3L3 4.27L12 13.27L12 13.28L21.73 23L23 21.73L4.27 3z"/>
+        </svg>
+        <h1>No Internet Connection</h1>
+        <p>Please check your network settings and try again.</p>
+        <button class="btn" onclick="retry()">Try Again</button>
+    </div>
+
+    <script>
+        function retry() {
+            // Tries to navigate back to the main app url
+            window.location.href = 'https://app.swiftpos.ng/';
+        }
+    </script>
+</body>
+</html>

@@ -29,7 +29,8 @@
             android:layout_height="match_parent"
             android:contentDescription="@null"
             android:importantForAccessibility="no"
-            android:scaleType="centerCrop"
+            android:scaleType="centerInside"
+            android:background="#FFFFFF"
             android:src="@drawable/launch" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
