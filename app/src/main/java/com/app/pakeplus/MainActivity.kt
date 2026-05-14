@@ -220,6 +220,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.single_main)
         if (!showLaunchSplash) {
             findViewById<View>(R.id.splash_overlay).visibility = View.GONE
+        } else {
+            val splashText = findViewById<android.widget.TextView>(R.id.splash_text)
+            val messages = arrayOf(
+                "Welcome to SwiftPOS",
+                "Loading your workspace...",
+                "Getting things ready...",
+                "Almost there..."
+            )
+            splashText?.text = messages.random()
         }
         // set system safe area
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.ConstraintLayout))
